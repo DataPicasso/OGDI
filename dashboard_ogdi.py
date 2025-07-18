@@ -69,7 +69,7 @@ with st.sidebar:
 # =================== #
 
 # --- EGDI & E-Participation ---
-df_egdi = pd.read_csv(r'C:\Users\pedro.figueroa\Desktop\Mother\AI\OGBI\EGOV_MERGED_2005_2024.csv')
+df_egdi = pd.read_csv("https://raw.githubusercontent.com/DataPicasso/OGDI/main/EGOV_MERGED_2005_2024.csv")
 years = [2005, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024]
 egdi_cols = [f'E-Government Index {y}' for y in years]
 ep_cols = [f'E-Participation Index {y}' for y in years]
@@ -99,7 +99,7 @@ df_ep.dropna(subset=['E-Participation'], inplace=True)
 df_ep['Country Name'] = df_ep['Country Name'].str.strip()
 
 # --- Internet Penetration ---
-df_conn = pd.read_csv(r'C:\Users\pedro.figueroa\Desktop\Mother\AI\OGBI\internet_penetration_ogdi.csv')
+df_conn = pd.read_csv("https://raw.githubusercontent.com/DataPicasso/OGDI/main/internet_penetration_ogdi.csv")
 yrs_conn = sorted(df_conn['Year'].unique())
 
 # =================== #
@@ -360,6 +360,5 @@ else:
             st.warning("❗ Sin datos para RD")
 
     st.markdown("<hr>", unsafe_allow_html=True)
-
 
 st.caption("Dashboard OGDI • Datos: ONU & Banco Mundial ")
